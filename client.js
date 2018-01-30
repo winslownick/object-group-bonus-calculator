@@ -53,7 +53,7 @@ function totalBonus(bonusPercent, annualSalary){
 }//calculates total bonus $
 
 function totalComp(totalBonus, annualSalary){
-  return (totalBonus + annualSalary);
+  return (totalBonus + parseInt(annualSalary));
 }
 
 function employeeInfo( name, bonusPercent, totalComp, totalBonus ){
