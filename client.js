@@ -64,7 +64,10 @@ function employeeInfo( name, bonusPercent, totalComp, totalBonus ){
 };//new object creator
 
 function bonusForEmployee(obj) {
-var bonusInfo = new employeeInfo ( obj.name, calcBonus(obj), totalComp( calcBonus(obj), obj.annualSalary), totalBonus( calcBonus(obj), obj.annualSalary) );
+var bonusInfo = new employeeInfo ( obj.name, calcBonus(obj),
+totalComp(totalBonus( calcBonus(obj),
+  obj.annualSalary) , obj.annualSalary), totalBonus( calcBonus(obj),
+  obj.annualSalary) );
 return bonusInfo;
 }
 
