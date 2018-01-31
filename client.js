@@ -78,4 +78,25 @@ function bonusForEmployees (arr) {
   } return arrayOfEmployees;
 }
 
-console.log(bonusForEmployees(employees));
+var boneObjs = bonusForEmployees(employees);
+console.log( boneObjs);
+
+function showData () {
+  $ ('#output').toggle();
+}
+var wrapper = $ ('#output'), container;
+for (var key in boneObjs) {
+  container = $('<div id="output" class = "container"></div>');
+  wrapper.append(container);
+  container.append('<div class="name">' + boneObjs[key].name+ '</div>');
+  container.append('<div class="bonusPercent">'+ 'Bonus Percentage: ' + boneObjs[key].bonusPercent +
+ '</div>');
+  container.append('<div class = "totalComp">' +'Total Compensation: $' + boneObjs[key].totalComp + '</div>');
+  container.append('<div class = "totalBonus">' +'Total Bonus: $' + boneObjs[key].totalBonus + '</div>');
+}
+
+function onReady () {
+  console.log('page ready');
+  $('#output').hide();
+  $('#showData').on('click', showData );
+}
